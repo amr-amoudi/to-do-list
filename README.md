@@ -13,7 +13,7 @@ The app lets you:
 
 ## 🚀 Installation & Usage
 
-you can go on 
+you can go on: **<a>https://to-do-list-app-aa.netlify.app/</a>**
 
 Or, if you want to host it locally:
 1. **Clone the repo**
