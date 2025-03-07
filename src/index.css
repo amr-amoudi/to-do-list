@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, Verdana, sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: #051014;
+}
+
+main{
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    color: white;
+}
+
+/* margin on the input and the add button */
+.to-do-main{
+    margin: 5px 0 10px 0;
+}
+
+button{
+    background-color: #12164e;
+    border: #191970 solid 1px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bottom-part{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+}
+
+input[type="text"]{
+    background-color: #12164e;
+    border: #191970 solid 1px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+}
+
+input[type="text"]::placeholder{
+    color: white;
+}
+
+/* the color input */
+
+input[type="color"] {
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: none;
+}
+
+/* the time input */
+
+input[type="time"] {
+    background-color: #12164e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+
+/* aligning the tasks on the center */
+.list-items{
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px;
+    user-select: none;
+    color: white;
+    margin: 10px 0;
+    border-radius: 5px;
+    animation: display-list-items ease-in-out 0.3s;
+}
+
+
+input[type="checkbox"]{
+    display: none;
+}
+
+
+/* stying for each task */
+
+.task{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+/* the bullet point before the text*/
+
+.task::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+/* style the label of a checkbox that is checked */
+
+input[type="checkbox"]:checked + .task::before {
+    background-color: blue;
+    border-color: blue;
+}
+
+input[type="checkbox"]:checked + .task::after{
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+
+}
+
+/* the red line when a task is done */
+
+input[type="checkbox"]:checked + .task span{
+    position: relative;
+}
+
+input[type="checkbox"]:checked + .task span:before {
+    content: '';
+    background: red;
+    width: 97%;
+    height: 3px;
+    position:absolute;
+    top: 55%;
+}
+
+/* when a new task gets added or rendering all tasks */
+
+@keyframes display-list-items {
+    from{
+        transform: skew(-10deg) translateX(-40px);
+        opacity: 0.75;
+    }
+    to{
+        transform: skew(0) translateX(0);
+        opacity: 1;
+    }
+}
