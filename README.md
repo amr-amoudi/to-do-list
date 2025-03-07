@@ -47,7 +47,6 @@ Or, if you want to host it locally:
 - **CSS**
 - **JavaScript (Vanilla)**
 - **TypeScript**
-- **LocalStorage**
 
 
 ## License
