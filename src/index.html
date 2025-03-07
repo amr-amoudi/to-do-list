@@ -2,9 +2,31 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <link rel="stylesheet" href="./index.css">
+        <link rel="icon" type="image/x-icon" href="./check.svg">
+        <title>To DO LIST</title>
     </head>
     <body>
 
+        <main>
+            <label for="to-do-input">Add To Do</label>
+            <div class="to-do-main">
+                <input id="to-do-input" type="text">
+                <button id="to-do-submit">Add!</button>
+            </div>
+            <div class="bottom-part">
+                <input id="to-do-background-color" type="color">
+                <input type="time" id="to-do-time" value="00:00">
+                <button id="delete-all">Delete All</button>
+            </div>
+        </main>
+
+        <!--all list tasks live here-->
+        <div class="list-items">
+            <ul id="to-do-list">
+            </ul>
+        </div>
+
+        <script src="./index.js"></script>
     </body>
 </html>
